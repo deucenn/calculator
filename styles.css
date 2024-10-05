@@ -60,6 +60,16 @@ button {
   border-radius: 2%;
 }
 
+.output-last {
+  min-height: 32px;
+  font-size: 20px;
+}
+
+.output-current {
+  min-height: 64px;
+  font-size: 40px;
+}
+
 .buttonsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
