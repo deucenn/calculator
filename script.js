@@ -61,10 +61,13 @@ function clear() {
 }
 
 function deleteNumber() {
+  if (currentOperationScreen.textContent === "0") return;
   currentOperationScreen.textContent = currentOperationScreen.textContent.slice(
     0,
     -1
   );
+  if (currentOperationScreen.textContent === "")
+    currentOperationScreen.textContent = "0";
 }
 
 function appendPoint() {}
