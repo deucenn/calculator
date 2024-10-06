@@ -70,6 +70,7 @@ function deleteNumber() {
     currentOperationScreen.textContent = "0";
 }
 
+// TODO: build the appendPoint function
 function appendPoint() {}
 
 function evaluate() {
