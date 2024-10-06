@@ -2,6 +2,8 @@
 
 A calculator app I´ve build with HTML, CSS and JavaScript.
 
+[LIVE Preview](https://deucenn.github.io/calculator/)
+
 ----------------------------------------------------------------
 
 TODO:
