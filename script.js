@@ -52,10 +52,6 @@ function addOperator(operator) {
 //   shouldResetScreen = false
 // }
 
-function evaluate(operator, a, b) {
-
-}
-
 function clear() {
   currentOperationScreen.textContent = "0";
   lastOperationScreen.textContent = "";
@@ -65,10 +61,32 @@ function clear() {
 }
 
 function deleteNumber() {
-  currentOperationScreen.textContent = currentOperationScreen.textContent.slice(0, -1);
+  currentOperationScreen.textContent = currentOperationScreen.textContent.slice(
+    0,
+    -1
+  );
 }
 
 function appendPoint() {}
+
+function evaluate() {
+  if (currentOperationScreen.textContent === "0") return;
+  if (currentOperationScreen.text === "0" && mathematicalOperation === "÷") {
+    alert("You can´t divide by 0!");
+    return;
+  }
+
+  secondOperand = currentOperationScreen.textContent;
+  currentOperationScreen.textContent = roundResult(
+    calculate(mathematicalOperation, firstOperand, secondOperand)
+  );
+  lastOperationScreen.textContent = `${firstOperand} ${mathematicalOperation} ${secondOperand}`;
+  mathematicalOperation = null;
+}
+
+function roundResult(number) {
+  return Math.round(number * 1000) / 1000;
+}
 
 // Mathematical operations
 const summation = (a, b) => {
@@ -86,3 +104,18 @@ const multiplication = (a, b) => {
 const division = (a, b) => {
   return a / b;
 };
+
+function calculate(operand, a, b) {
+  switch (operand) {
+    case "+":
+      return summation(a, b);
+    case "-":
+      return subtraction(a, b);
+    case "×":
+      return multiplication(a, b);
+    case "÷":
+      return division(a, b);
+    default:
+      return null;
+  }
+}
