@@ -113,7 +113,7 @@ function calculate(operand, a, b) {
   switch (operand) {
     case "+":
       return summation(a, b);
-    case "-":
+    case "−":
       return subtraction(a, b);
     case "×":
       return multiplication(a, b);
